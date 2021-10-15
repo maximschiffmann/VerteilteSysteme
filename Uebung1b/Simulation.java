@@ -1,4 +1,4 @@
-package Uebung1a;
+package Uebung1b;
 
 public class Simulation {
 
@@ -16,4 +16,3 @@ public class Simulation {
 	}
 	
 }
-

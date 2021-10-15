@@ -1,4 +1,4 @@
-package Uebung1a;
+package Uebung1b;
 
 import java.util.Random;
 
@@ -43,7 +43,7 @@ public class Auto extends Thread {
 			// Parken
 			this.parkhaus.einparken(this);
 			try {
-				Thread.sleep(new Random().nextInt(10000));
+				Thread.sleep(new Random().nextInt(1000));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
