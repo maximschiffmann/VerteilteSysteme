@@ -28,7 +28,7 @@ public class Parkhaus {
 	}
 
 	public synchronized void autokauf(Kunde kunde) {
-		while (this.autos.size() <= 0) {
+		while (this.autos.isEmpty()) {
 			try {
 				System.out.println("Keine Autos zum Kaufen verfügbar! Anfrage von: " + kunde.getName());
 				wait();
