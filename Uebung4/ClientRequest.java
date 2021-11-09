@@ -88,6 +88,7 @@ public class ClientRequest implements Runnable {
 				for (String s : messages) {
 					writer.println(s);
 				}
+				writer.flush();
 			} catch (Exception e) {
 				writer.println("RCV Error!");
 			}

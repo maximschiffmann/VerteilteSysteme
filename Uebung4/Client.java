@@ -26,12 +26,13 @@ public class Client {
 				OutputStream out = server.getOutputStream();
 				PrintWriter writer = new PrintWriter(out);
 
-						writer.println(message);
-						writer.flush();
+				writer.println(message);
+				writer.flush();
 
-					String getServerMessage = reader.readLine();
+				for(String getServerMessage = reader.readLine(); getServerMessage != null; getServerMessage = reader.readLine()) {
 					System.out.println(getServerMessage);
-					server.close();
+				}
+				server.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 				System.err.println("Can't establish connection!");
