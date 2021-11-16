@@ -1,4 +1,4 @@
-package Uebung5;
+package Uebung6c;
 
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;

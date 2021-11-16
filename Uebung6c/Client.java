@@ -1,9 +1,10 @@
-package Uebung5;
+package Uebung6c;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.Date;
 
 public class Client {
@@ -17,12 +18,12 @@ public class Client {
 		Date aufnahmeVom = new Date();
 		String patientenName = "Tom";
 		byte[] rawData = { 1, 2, 1, 2 };
-
 		Röntgenbild röntgenbild = new Röntgenbild(aufnahmeVom, patientenName, rawData);
-		Bericht berichtVomServer = stub.analysieren(röntgenbild);
 		
-		System.out.println(berichtVomServer.toString());
-
+		BerichtCallbackIF callbackIF = new BerichtCallback();
+		BerichtCallbackIF stubCallback = (BerichtCallbackIF) UnicastRemoteObject.exportObject(callbackIF, 0);
+		stub.analysieren(röntgenbild, stubCallback);
+		
 	}
 
 }

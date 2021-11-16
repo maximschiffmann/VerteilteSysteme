@@ -1,45 +1,43 @@
-package Uebung5;
+package Uebung6b;
 
-import java.io.Serializable;
+import java.rmi.RemoteException;
 import java.util.Date;
 
-public class Bericht implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class BerichtB implements BerichtIF {
 	
 	private Date datum;
 	private String diagnose;
 	private String weitersVorgehen;
 
-	public Bericht() {
+	public BerichtB() {
 	}
 
-	public Bericht(Date datum, String diagnose, String weitersVorgehen) {
+	public BerichtB(Date datum, String diagnose, String weitersVorgehen) {
 		this.datum = datum;
 		this.diagnose = diagnose;
 		this.weitersVorgehen = weitersVorgehen;
 	}
 
-	public Date getDatum() {
+	@Override
+	public Date getDatum() throws RemoteException {
 		return datum;
 	}
 
 	public void setDatum(Date datum) {
 		this.datum = datum;
 	}
-
-	public String getDiagnose() {
+	
+	@Override
+	public String getDiagnose() throws RemoteException {
 		return diagnose;
 	}
 
 	public void setDiagnose(String diagnose) {
 		this.diagnose = diagnose;
 	}
-
-	public String getWeitersVorgehen() {
+	
+	@Override
+	public String getWeitersVorgehen() throws RemoteException {
 		return weitersVorgehen;
 	}
 

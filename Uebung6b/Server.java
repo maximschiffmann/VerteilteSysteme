@@ -1,4 +1,4 @@
-package Uebung5;
+package Uebung6b;
 
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
@@ -14,7 +14,7 @@ public class Server {
 		
 		FrüherkennungIF früherkennung = new FrüherkennungService();
 		FrüherkennungIF skeleton = (FrüherkennungIF)UnicastRemoteObject.exportObject(früherkennung, 0);
-		r.bind("Bericht", skeleton);
+		r.bind("Früherkennung", skeleton);
 		
 		System.out.println("Server started!");
 	}

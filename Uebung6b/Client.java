@@ -1,4 +1,4 @@
-package Uebung5;
+package Uebung6b;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -12,14 +12,14 @@ public class Client {
 		int port = 1111;
 		Registry r = LocateRegistry.getRegistry("localhost", port);
 
-		FrüherkennungIF stub = (FrüherkennungIF) r.lookup("Bericht");
+		FrüherkennungIF stubFrüherkennung = (FrüherkennungIF) r.lookup("Früherkennung");
 
 		Date aufnahmeVom = new Date();
 		String patientenName = "Tom";
 		byte[] rawData = { 1, 2, 1, 2 };
 
 		Röntgenbild röntgenbild = new Röntgenbild(aufnahmeVom, patientenName, rawData);
-		Bericht berichtVomServer = stub.analysieren(röntgenbild);
+		BerichtIF berichtVomServer = stubFrüherkennung.analysieren(röntgenbild);
 		
 		System.out.println(berichtVomServer.toString());
 

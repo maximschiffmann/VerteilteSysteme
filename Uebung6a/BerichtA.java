@@ -1,9 +1,9 @@
-package Uebung5;
+package Uebung6a;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class Bericht implements Serializable {
+public class BerichtA implements Serializable {
 
 	/**
 	 * 
@@ -14,10 +14,10 @@ public class Bericht implements Serializable {
 	private String diagnose;
 	private String weitersVorgehen;
 
-	public Bericht() {
+	public BerichtA() {
 	}
 
-	public Bericht(Date datum, String diagnose, String weitersVorgehen) {
+	public BerichtA(Date datum, String diagnose, String weitersVorgehen) {
 		this.datum = datum;
 		this.diagnose = diagnose;
 		this.weitersVorgehen = weitersVorgehen;
