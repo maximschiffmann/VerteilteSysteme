@@ -8,8 +8,8 @@ public class Client {
 	public static void main(String[] args) {
 		
 		try {
-			// Socket server = new Socket("localhost", Server.PORT);
-			Socket server = new Socket("im-lamport.oth-regensburg.de", 1213);
+			 Socket server = new Socket("localhost", Server.PORT);
+			//Socket server = new Socket("im-lamport.oth-regensburg.de", 1213);
 			
 			Runnable keyboardListener = new KeyboardListener(server);
 			new Thread(keyboardListener).start();
